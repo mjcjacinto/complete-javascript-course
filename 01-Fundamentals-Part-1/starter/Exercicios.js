@@ -71,7 +71,7 @@ if (averageDolphins > averageKoalas) {
 } else console.log(`Os Dolfins perderam`);
 
 
-*/
+u*/
 
 ///// EXERCIOIO 4
 

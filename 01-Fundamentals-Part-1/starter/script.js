@@ -249,6 +249,8 @@ printc(sumo2);
 
 // FUNCOES 2
 
+'use strict';
+
 function calcAge1(birthYear) { //Function Declaration
     return (2022 - birthYear);
 }
