@@ -245,7 +245,7 @@ printc(sumo1);
 const sumo2 = fruitProcess(3, 1);
 printc(sumo2);
 
-*/
+*
 
 // FUNCOES 2
 
@@ -264,4 +264,30 @@ const calcAge2 = function (birthYear) { //Function Expression
 
 age1 = calcAge2(1971);
 console.log(age1);
+*/
 
+
+// FUNCOES 3
+'use strict';
+
+function printc(texto) {
+    console.log(texto);
+}
+
+
+
+//ARROW Function
+
+
+
+const calcAge3 = birthYear => (2037 - birthYear);
+const age3 = calcAge3(1992);
+printc(age3);
+
+const anosAteReforma = (birthYear, firstName) => {
+    const age = 2022 - birthYear;
+    const reforma = 65 - age;
+    return `${firstName}, reformas te daqui a ${reforma} anos`;
+}
+printc(anosAteReforma(1972, 'Miguel'));
+printc(anosAteReforma(1952, 'Totas'));
