@@ -1,5 +1,5 @@
 
-
+'use strict';
 /*
 
 #PARTE 1
@@ -264,11 +264,11 @@ const calcAge2 = function (birthYear) { //Function Expression
 
 age1 = calcAge2(1971);
 console.log(age1);
-*/
+
 
 
 // FUNCOES 3
-'use strict';
+
 
 function printc(texto) {
     console.log(texto);
@@ -291,3 +291,45 @@ const anosAteReforma = (birthYear, firstName) => {
 }
 printc(anosAteReforma(1972, 'Miguel'));
 printc(anosAteReforma(1952, 'Totas'));
+
+// FUNCOES 4. FUncoes a chamar funcçoes
+
+
+
+function cortaFruta(friut) {
+    return (friut * 4);
+}
+
+function fruitProcess(nuMacas, nuPeras) {
+    const gomosDeMacas = cortaFruta(nuMacas);
+    const gomosDePeras = cortaFruta(nuPeras);
+    const sumo = `Este suminho tem ${gomosDeMacas} gomos_Macas e ${gomosDePeras} gomos_Peras`;
+    return sumo;
+}
+
+console.log(fruitProcess(5, 4));
+
+
+
+// FUNCOEs 5 . Recap
+
+'use strict';
+
+const calcAge = function (birthYear) {
+    return 2022 - birthYear;
+}
+
+const anosAteReforma = function (birthYear, firstName) {
+    const age = calcAge(birthYear)
+    const reforma = 65 - age;
+    if (reforma > 0) {
+        return reforma;
+    } else {
+        return -1;
+    }
+    //    return `${firstName}, reformas te daqui a ${reforma} anos`;
+}
+
+console.log(anosAteReforma(1942, 'Miguel'));
+
+*/
