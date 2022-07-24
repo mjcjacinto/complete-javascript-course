@@ -157,7 +157,7 @@ const jhon = {
 }
 mark.calcBmi() > jhon.calcBmi() ?  console.log(`${mark.nomeCompleto} ${mark.calcBmi()} é maior do que o  ${jhon.nomeCompleto}`) : console.log('Outra cena')
     
-*/
+
 
 ///// EXERCIOIO 8 Loops
 
@@ -186,3 +186,6 @@ function avge(arr1){
     return soma/arr1.length;
 }
 console.log(avge(total));
+
+
+*/

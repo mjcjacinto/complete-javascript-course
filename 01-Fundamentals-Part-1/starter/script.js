@@ -510,7 +510,7 @@ for (let i = 1; i <= 5; i++) {
 }
 
 
-*/
+
 
 // WHILE LOOP - Quando não sabemos quantas vezes vamos iterar.
 
@@ -532,3 +532,5 @@ while (dice !== 6) {
     dice = Math.trunc(Math.random() * 6) + 1;
     console.log(dice);
 }
+
+*/
