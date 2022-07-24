@@ -322,7 +322,7 @@ const calcAge = function (birthYear) {
 const anosAteReforma = function (birthYear, firstName) {
     const age = calcAge(birthYear)
     const reforma = 65 - age;
-    if (reforma > 0) {
+    if (reforma > 0) 
         return reforma;
     } else {
         return -1;
@@ -332,4 +332,203 @@ const anosAteReforma = function (birthYear, firstName) {
 
 console.log(anosAteReforma(1942, 'Miguel'));
 
+
+
+
+///// ARRAYS
+
+const friends = ['Ana', 'Rui', 'Paulo', 'Silvia'];
+console.log(friends);
+friends.push('Tony'); //método ou função de 1 array. + 1 elemento ao fim do array e retorna o tamanho do array
+console.log(friends);
+console.log(friends.length);
+console.log(friends[0]);
+friends.unshift('Rita');
+console.log(friends); // + 1 elemento ao fim do array e retporna o tamanho do array
+
+console.log(friends.pop());   // - 1 elemento do fim do ARRAY e retorna-a 
+console.log(friends);
+
+console.log(friends.shift());   // - 1  elemento do inicio do ARRAY e retorna-a 
+console.log(friends);
+
+
+console.log(friends.indexOf('Paulo'));  //Retorna a posição do elemento
+
+console.log(friends.includes('Paulo'));  //Retorna verdade ou falso, se o elemento existe no array
+
+
+
+
+
+/////  OBJECTOS
+
+const migas = {
+    primeiroNome: 'Miguel',
+    ultimoNome: 'Jacinto',
+    idade: 50,
+    profissão: 'Eng',
+    amigos: ['Paulo', 'Ana']
+};
+
+console.log(migas);
+console.log(migas.idade);
+console.log(migas['primeiroNome']);
+
+// const varIn = prompt('O que é que queres saber do migas');
+
+// if (migas[varIn]) {
+//     console.log(migas[varIn]);
+// } else {
+//     console.log('Esquece');
+// }
+
+// Acrescentar propriedades a 1 objecto
+
+migas.location = 'Gondas';
+migas['email'] = 'mjctjacinto@rt.pt';
+console.log(migas['amigos'][0]);
+
+console.log(`O ${migas.primeiroNome} tem ${migas['amigos'].length} amigos e o melhor amigo é o ${migas['amigos'][0]}`);
+
+
+
+
+
+const migas = {
+    primeiroNome: 'Miguel',
+    ultimoNome: 'Jacinto',
+    dataNascimento: 1972,
+    profissão: 'Eng',
+    amigos: ['Paulo', 'Ana'],
+    temCarta: true,
+    // calcIdade: function (ano) {
+    //     return (new Date().getFullYear() - ano); //METHOD
+    // }
+    // calcIdade: function () {
+    //     return (new Date().getFullYear() - this.dataNascimento);
+    // }
+
+    calcIdade: function () {
+        this.idade = (new Date().getFullYear() - this.dataNascimento);
+        return this.idade;
+    },
+
+    summary: function () {
+        return `${this.primeiroNome} tem ${this.calcIdade()} anos, é ${this.profissão} e ${this.temCarta ? 'tem' : 'naõ tem'} carta`;
+    },
+    sumario2: function () {
+        return (this.temCarta ? 'tem' : 'naõ tem')
+    }
+}
+// console.log(migas['dataNascimento']);
+// console.log(migas.calcIdade(1972));
+// console.log(migas['calcIdade'](migas.dataNascimento));
+// console.log(migas.calcIdade(migas.dataNascimento));
+
+//console.log(migas[calcIdade(migas.dataNascimento)]);
+
+//migas.calcIdade();
+console.log(migas.summary());
+console.log(migas.sumario2());
+
+
+
+/// LOOPS
+
+// FOR
+
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Levanta peso numero ${rep}`);
+}
+
+
+
+const tipes = [];
+
+const migasArray = [
+    'Miguel',
+    'Jacinto',
+    new Date().getFullYear() - 1972,
+    ['Ana', 'Rui', 'Tina'],
+    true
+];
+
+for (let i = 0; i < migasArray.length; i++) {
+    console.log(migasArray[i], typeof (migasArray[i]));
+    tipes.push(typeof (migasArray[i]));
+}
+console.log(tipes);
+
+const anos = [];
+const aniversarios = [1991, 2007, 1969, 2020];
+
+for (let i = 0; i < aniversarios.length; i++) {
+    anos[i] = new Date().getFullYear() - aniversarios[i];
+    console.log(anos[i]);
+}
+
+
+
+
+// Continue ou Break
+console.log('APENAS STRINGS');
+for (let i = 0; i < migasArray.length; i++) {
+    if (typeof (migasArray[i]) !== 'string') continue;
+    console.log(migasArray[i], 'é uma ' + typeof (migasArray[i]));
+}
+
+// Continue ou Break
+console.log('APENAS Não strings');
+for (let i = 0; i < migasArray.length; i++) {
+    if (typeof (migasArray[i]) === 'boolean') break;
+    console.log(migasArray[i], 'é um/a ' + typeof (migasArray[i]));
+}
+
+
+
+
+// LOOPs reversos e Loops de Loops
+
+
+const migasArray = [
+    'Miguel',
+    'Jacinto',
+    new Date().getFullYear() - 1972,
+    ['Ana', 'Rui', 'Tina']
+];
+
+for (let i = migasArray.length - 1; i >= 0; i--) {
+    console.log(migasArray[i]);
+}
+
+
+for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= 3; j++) {
+        console.log(`${i},${j}  => ${i * j}`)
+    }
+}
+
+
 */
+
+// WHILE LOOP - Quando não sabemos quantas vezes vamos iterar.
+
+
+// for (let i = 1; i <= 10; i++) {
+//     console.log(`Repeticao via FOR do exercio numero ${i}`);
+// }
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`Repeticao via WHILE do exercio numero ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+    dice = Math.trunc(Math.random() * 6) + 1;
+    console.log(dice);
+}

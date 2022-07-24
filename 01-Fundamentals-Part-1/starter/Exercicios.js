@@ -81,7 +81,7 @@ console.log(tipPercent);
 
 console.log(`The bill was ${bill}, the tip was ${tipPercent}, and the total value ${bill * tipPercent}`);
 
-*/
+
 
 ///// EXERCIOIO 5
 
@@ -108,3 +108,81 @@ console.log(dolf);
 koal = calcAverage(23, 34, 27);
 console.log(koal);
 console.log(checkWinner(dolf, koal));
+
+
+
+///// EXERCIOIO 6
+
+// const bill = 300;
+// const tipPercent = (bill >= 50 && bill <= 300) ? 1.15 : 1.20;
+// console.log(tipPercent);
+
+
+// function tipPercent(bill) {
+//     return ((bill >= 50 && bill <= 300) ? 1.15 : 1.20);
+// }
+
+const tipPercent = function (bill) {
+    return ((bill >= 50 && bill <= 300) ? 1.15 : 1.20);
+}
+
+const bill = [125, 555, 44];
+console.log(tipPercent(bill[0]), tipPercent(bill[1]), tipPercent(bill[2]));
+console.log(tipPercent(bill[0]) * bill[0], tipPercent(bill[1]) * bill[1], tipPercent(bill[2]) * bill[2]);
+
+
+
+///// EXERCIOIO 7 Objectos
+
+//For each of them, create an object with properties for their full name, mass, and height(Mark Miller and John Smith)
+
+const mark = {
+    nomeCompleto: 'Mark Miller',
+    peso: 78,
+    altura: 1.69,
+    calcBmi: function () {
+        this.bmi = this.peso / (this.altura ** 2);
+        return this.bmi;
+    }
+}
+
+const jhon = {
+    nomeCompleto: 'John Smith',
+    peso: 92,
+    altura: 1.95,
+    calcBmi: function () {
+        this.bmi = this.peso / (this.altura ** 2);
+        return this.bmi;
+    }
+}
+mark.calcBmi() > jhon.calcBmi() ?  console.log(`${mark.nomeCompleto} ${mark.calcBmi()} é maior do que o  ${jhon.nomeCompleto}`) : console.log('Outra cena')
+    
+*/
+
+///// EXERCIOIO 8 Loops
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86,52];
+const tips = [];
+const total = [];
+
+function tipPercent(bill) {
+     return ((bill >= 50 && bill <= 300) ? 1.15 : 1.20);
+}
+
+for (let i=0;i< bills.length;i++){
+    //console.log(bills[i],tipPercent(bills[i]), tipPercent(bills[i]) * bills[i]);
+    total.push(tipPercent(bills[i]) * bills[i]);
+   //console.log(total[i]);
+}
+
+const arr = [2,3,7];
+
+function avge(arr1){
+    let soma = 0;
+    for (let i = 0;i < arr1.length; i++){
+        soma += arr1[i];
+    }
+    console.log(soma,arr1.length);
+    return soma/arr1.length;
+}
+console.log(avge(total));
