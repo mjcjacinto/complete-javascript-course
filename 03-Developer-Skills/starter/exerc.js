@@ -1,4 +1,5 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-console.log('tetse');
+const sd = '32';
+console.log(sd);
